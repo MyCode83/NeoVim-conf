@@ -31,7 +31,10 @@ require("lazy").setup({
 })
 
 local caps=require("cmp_nvim_lsp").default_capabilities()
+
 require("lspconfig").gopls.setup({capabilities=caps})
 require("lspconfig").pyright.setup({capabilities=caps})
 require("lspconfig").bashls.setup({capabilities=caps})
 EOF
+
+sed -i '/require("lspconfig")/,$d' ~/.config/nvim/init.lua && cat >> ~/.config/nvim/init.lua <<'EOF'\nlocal caps = require("cmp_nvim_lsp").default_capabilities()\n\nvim.lsp.config("gopls", { capabilities = caps })\nvim.lsp.config("pyright", { capabilities = caps })\nvim.lsp.config("bashls", { capabilities = caps })\n\nvim.lsp.enable({ "gopls", "pyright", "bashls" })\nEOF
