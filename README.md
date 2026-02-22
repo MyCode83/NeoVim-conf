@@ -4,4 +4,4 @@
 
 ### Install .sh
 ```bash
-mkdir -p ~/.config/nvim && curl -fsSL https://raw.githubusercontent.com/MyCode83NeoVim-conf/main/init.lua > ~/.config/nvim/init.lua
+mkdir -p ~/.config/nvim && curl -fsSL https://raw.githubusercontent.com/MyCode83/NeoVim-conf/main/init.lua > ~/.config/nvim/init.lua
